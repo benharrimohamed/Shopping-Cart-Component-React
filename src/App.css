@@ -5,7 +5,6 @@
 
 body {
 
-    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +14,7 @@ body {
 
 .cart-container {
 
-    background-color: aliceblue;
+    background-color:cornflowerblue;
     padding: 20px;
     font-family: 'Arial';
     width:800px;
@@ -23,15 +22,33 @@ body {
     border:none;
     display: flex;
     flex-direction: column;
+    animation: ContainerAnimation 2s 0s;
+    overflow: hidden;
+    
 }
+
+
+
+@keyframes ContainerAnimation {
+
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+  
+    }
+}
+
+
 
 
 .cart-title {
 
     font-size: 1.2em;
-    border-bottom : 1px dotted #000;
     padding-bottom: 10px;
     font-weight: 200;
+    color: white;
 }
 
 .cart-content {
@@ -49,7 +66,33 @@ body {
     border-radius: 10px;
     justify-content: space-around;
     align-items: center;
+    animation: ItemAnimation 1s 2s;
 }
+
+@keyframes ItemAnimation {
+
+    0% {
+    left: 100;
+    }
+    100% {
+    left: 0;
+  
+    }
+}
+
+.remove-item-icon {
+
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+    
+
+}
+
 .item-total {
 
     font-size: small;
@@ -100,6 +143,14 @@ body {
     
 }
 
+.no-items {
+
+    text-align: center;
+    color: crimson;
+    font-size: medium;
+    font-weight: 100;
+}
+
 button:disabled {
 
     cursor : not-allowed;
@@ -121,7 +172,7 @@ button:disabled {
     font-size: 20px;
     font-weight: 400;
     text-align: right;
-    color : rgb(50, 192, 50);
+    color : white;
 }
 
 .cart-total h1:disabled {
@@ -133,4 +184,28 @@ button:disabled {
     width:30%;
 }
 
+.items-counter{
+    background-color: rebeccapurple;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+.items-counter h1 {
+    font-size: medium;
+    font-weight: 200;
+    align-self: center;
+}
+
+.cart-header {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom : 1px dotted #000;
+}
 
